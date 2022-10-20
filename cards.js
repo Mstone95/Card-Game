@@ -8,6 +8,8 @@ class Card {
 class Deck {
     constructor() {
         this.cards = []
+        // this.shuffledCards =[]
+        this.dealtCards = []
     }
     fillDeck() {
         this.cards = []
@@ -52,8 +54,51 @@ class Deck {
 
         }
     }
+    
+    // shuffleDeck(){
+    //     for(let i=0; i <= 52; i++){
+    //     let random = Math.floor(Math.random()*51)
+    //     if(!(this.shuffledCards.includes(this.cards[random]))){
+    //     this.shuffledCards.push(this.cards[random])
+    //     }
+    //     else{
+    //     }
+    //     }
+    // }
+    shuffleDeck(){
+        
+        for (let i = this.cards.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * i);
+            let temp = this.cards[i];
+            this.cards[i] = this.cards[j];
+            this.cards[j] = temp;
+    }
+
+}
+    deal(numOfCards){
+       for(let i = 0; i < numOfCards; i++){
+        this.dealtCards.push(this.cards[i])
+       } 
+    }
+
 }
 
 const deck1 = new Deck()
 deck1.fillDeck()
 console.log(deck1.cards)
+deck1.shuffleDeck()
+console.log(deck1.cards)
+deck1.deal(2)
+console.log(deck1.dealtCards)
+
+
+const deck2 = new Deck
+
+
+
+// shuffle the cards
+// for (let i = deck.length - 1; i > 0; i--) {
+//     let j = Math.floor(Math.random() * i);
+//     let temp = deck[i];
+//     deck[i] = deck[j];
+//     deck[j] = temp;
