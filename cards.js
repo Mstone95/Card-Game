@@ -90,6 +90,8 @@ deck1.shuffleDeck()
 console.log(deck1.cards)
 deck1.deal(2)
 console.log(deck1.dealtCards)
+deck1.deal(2)
+console.log(deck1.dealtCards)
 
 
 const deck2 = new Deck
