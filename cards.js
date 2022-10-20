@@ -10,6 +10,7 @@ class Deck {
         this.cards = []
         // this.shuffledCards =[]
         this.dealtCards = []
+        this.playerArray = []
     }
     fillDeck() {
         this.cards = []
@@ -53,6 +54,7 @@ class Deck {
 
 
         }
+        return this.cards
     }
     
     // shuffleDeck(){
@@ -75,23 +77,39 @@ class Deck {
     }
 
 }
-    deal(numOfCards){
+    deal(numOfCards, players){
+        
+        let playersArray = []
+        
+        for(let j = 0; j < players; j++){
+            let hand = []
+            console.log(this.cards)
        for(let i = 0; i < numOfCards; i++){
-        this.dealtCards.push(this.cards[i])
+        console.log(this.cards)
+        hand.push(this.cards[i])
+
        } 
+       playersArray.push(hand)
+    }
+    console.log(playersArray)
+    return playersArray
+}
+    draw(){
+        
     }
 
 }
 
 const deck1 = new Deck()
 deck1.fillDeck()
-console.log(deck1.cards)
+
 deck1.shuffleDeck()
-console.log(deck1.cards)
-deck1.deal(2)
-console.log(deck1.dealtCards)
-deck1.deal(2)
-console.log(deck1.dealtCards)
+
+
+deck1.deal(3,5)
+
+
+
 
 
 const deck2 = new Deck
